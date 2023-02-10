@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/', urlRouter);
 
-
 const run = async () => {
   mongoose.set('strictQuery', false);
   await mongoose.connect('mongodb://localhost/url');

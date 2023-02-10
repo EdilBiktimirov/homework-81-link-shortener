@@ -1,17 +1,14 @@
 import React from 'react';
-import Home from "./features/shortUrl/Home";
 import {Route, Routes} from "react-router-dom";
-
+import Home from "./features/shortUrl/Home";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
-        <Route path={'/'} element={<Home/>}>
-
-        </Route>
+        <Route path={'/'} element={<Home/>}/>
+        <Route path={'*'} element={<h1>Not found</h1>}/>
       </Routes>
-
     </div>
   );
 }

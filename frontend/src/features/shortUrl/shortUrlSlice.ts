@@ -1,7 +1,7 @@
-import {UrlApi} from "../../types";
 import {createSlice} from "@reduxjs/toolkit";
 import {addShortUrl} from "./shortUrlThunks";
 import {RootState} from "../../app/store";
+import type {UrlApi} from "../../types";
 
 interface InitialState {
   item: UrlApi | null;
@@ -34,7 +34,7 @@ const shortUrlSlice = createSlice({
       state.error = true;
     });
   }
-})
+});
 
 export const shortUrlReducer = shortUrlSlice.reducer;
 

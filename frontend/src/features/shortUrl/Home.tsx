@@ -3,9 +3,9 @@ import UrlForm from "./components/UrlForm";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <UrlForm/>
-    </div>
+    </>
   );
 };
 

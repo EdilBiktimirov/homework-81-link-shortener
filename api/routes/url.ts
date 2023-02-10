@@ -1,6 +1,6 @@
 import express from "express";
-import {Url} from "../types";
 import ShortUrl from "../models/url";
+import type {Url} from "../types";
 
 const urlRouter = express.Router();
 
@@ -37,11 +37,9 @@ urlRouter.get('/:shortUrl', async (req, res) => {
       return res.sendStatus(404);
     }
     res.status(301).redirect(result.originalUrl);
-
   } catch (e) {
     return res.sendStatus(500);
   }
-})
-
+});
 
 export default urlRouter;

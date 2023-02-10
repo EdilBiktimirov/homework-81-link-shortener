@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {shortUrlReducer} from "../features/shortUrl/shortUrlSlice";
 
-
 export const store = configureStore({
   reducer: {
     shortUrl: shortUrlReducer,
