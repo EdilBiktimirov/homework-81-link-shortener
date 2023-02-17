@@ -4,4 +4,6 @@ export interface UrlApi {
   originalUrl: string;
 }
 
-export type UrlMutation = Omit<UrlApi, '_id'>
+export interface UrlMutation {
+  originalUrl: string;
+}

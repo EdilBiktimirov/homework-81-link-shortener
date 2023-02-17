@@ -12,34 +12,21 @@ const UrlForm = () => {
   const loading = useAppSelector(selectLoading);
 
   const [state, setState] = useState<UrlMutation>({
-    shortUrl: '',
     originalUrl: '',
   });
 
   const [show, setShow] = useState('none');
 
-  const getRandomId = () => {
-    let result = '';
-    const words = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
-    const max_position = words.length - 1;
-    for (let i = 0; i < 7; i++) {
-      const position = Math.floor(Math.random() * max_position);
-      result = result + words.substring(position, position + 1);
-    }
-    return result;
-  };
-
   const onInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
 
     setState((prev) => ({...prev, [name]: value}));
-    setState((prev) => ({...prev, shortUrl: getRandomId()}));
   };
 
   const onFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     await dispatch(addShortUrl(state));
-    setState((prev) => ({...prev, shortUrl: '', originalUrl: ''}));
+    setState((prev) => ({...prev, originalUrl: ''}));
     setShow('block');
   };
 
